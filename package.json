@@ -11,7 +11,6 @@
     "clean:node": "rm -rf node_modules/ package-lock.json",
     "clean:wrangler": "rm -rf worker/ dist/",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "./src/build/pre.sh",
     "build": "npx webpack --config webpack.config.cjs",
     "build:fastly": "npx webpack --config webpack.fastly.cjs && npm run fastly:wasm",
     "build:fly": "npx webpack --config webpack.fly.cjs",
@@ -28,10 +27,9 @@
   },
   "homepage": "https://github.com/serverless-dns/serverless-dns#readme",
   "engines": {
-    "node": ">=16"
+    "node": ">=22"
   },
   "dependencies": {
-    "@riaskov/mmap-io": "github:ignoramous/mmap-io#7f0925b989eac749ced440e51e616dfff4873ecd",
     "@serverless-dns/dns-parser": "github:serverless-dns/dns-parser#v2.1.2",
     "@serverless-dns/lfu-cache": "github:serverless-dns/lfu-cache#v3.5.2",
     "@serverless-dns/trie": "github:serverless-dns/trie#v0.0.17",
